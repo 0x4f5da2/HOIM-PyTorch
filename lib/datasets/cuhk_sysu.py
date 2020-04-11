@@ -21,6 +21,10 @@ class CUHK_SYSU(PersonSearchDataset):
         if osp.isfile(cache_file):
             roidb = unpickle(cache_file)
             return roidb
+        
+        if not osp.exists(osp.join(self.root, "cache")):
+            import os
+            os.mkdir(osp.join(self.root, "cache"))
 
         # Load all images and build a dict from image to boxes
         all_imgs = loadmat(

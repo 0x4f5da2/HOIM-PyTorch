@@ -1,6 +1,6 @@
 import torch
 from torch.nn.utils import clip_grad_norm_
-from apex import amp
+# from apex import amp
 from ignite.engine.engine import Engine, Events
 import huepy as hue
 import time
